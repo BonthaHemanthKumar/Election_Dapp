@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url('https://img.freepik.com/free-vector/rustic-white-brick-background-vector_1453-216.jpg?size=338&ext=jpg');
+      }
+      </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+    <title>Election Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body background="https://cutewallpaper.org/21/html-background-images/Simple-HTML-CSS-Web-Page-Grid-Layout-Blended-HTML.png">
+    <section>
+      <img class="mySlides" src="https://ceotelangana.nic.in/images/sliders/slider7.jpg"
+      style="width:100%" height="350">
+      <img class="mySlides" src="https://npoc.org/wp-content/uploads/2015/12/election.png"
+      style="width:100%" height="350">
+      <img class="mySlides" src="https://img.etimg.com/thumb/msid-81229743,width-1200,height-900,imgsize-594889,overlay-economictimes/photo.jpg"
+      style="width:100%" height="350">
+    </section>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+       
+         <h1 class="text-center" style="color: midnightblue; font-weight: bolder;">CR's Election</h1>
+          <hr/>
+          <h3 style="color: red; font-weight: bold;">Rules that you must remember before you cast your vote</h3>
+          <ul style="color: brown; font-weight: bold;">
+            <li>Make sure you vote only once!</li>
+            <li>Make sure you vote the deserving candidate.</li>
+            <li>This is our first decentralized voting application ,we hope you make it success.</li>
+            <li>Thanks for comming here to vote!</li>
+          </ul>
+          <br/>
+          <div id="loader">
+            <p class="text-center" style="color: blueviolet; font-weight: bold;">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table" style="color: darkblue; font-weight: 900;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote(); return false;">
+              <div class="form-group">
+                <label for="candidatesSelect" style="color: brown; font-weight: 900;">Select Candidate</label>
+                <select style="color: blueviolet; font-weight: 900;" class="form-control" id="candidatesSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Vote</button>
+              <hr />
+            </form>
+            <p style="color: rgb(34, 0, 0); font-weight: bold;" id="accountAddress" class="text-center"></p>
+          </div>
+              <pre style="color: blueviolet; font-weight: bolder;"> The ballot is stronger than the bullet
+                                                  -- ABRHAM LINCOLN </pre>
+        </div>
+      </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      // Automatic Slideshow - change image every 3 seconds
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 5000);
+      }
+      </script>
+      
+  </body>
+</html>
